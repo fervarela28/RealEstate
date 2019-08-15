@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="landingpage.css">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-info mb-4">
+      <a class="navbar-brand" href="#">
+        <img src="logoNombre.png" width="120" height="30" class="d-inline-block align-top" alt="">
+      </a>
+    </nav>
+    <div class="container mb-4">
+      <div class="radiowrapper" id="wrap1">
+      <input type="radio" name="problem" value="headaches" id="problem1" checked>
+      <label for="problem1">Ventas</label>
+      <input type="radio" name="problem" value="alquiler" id="problem2">
+      <label for="problem2">Alquiler</label>
+    </div>
+    <form class="form-inline">
+
+      <!--DROPDOWN-->
+
+      <script type ="text/javascript">
+    $(".checkbox-menu").on("change", "input[type='checkbox']", function() {
+       $(this).closest("li").toggleClass("active", this.checked);
+    });
+
+    $(document).on('click', '.allow-focus', function (e) {
+      e.stopPropagation();
+    });
+
+  </script>
+
+  <style type="text/css">
+    .checkbox-menu li label {
+        display: block;
+        padding: 3px 10px;
+        clear: both;
+        font-weight: normal;
+        line-height: 1.42857143;
+        color: #333;
+        white-space: nowrap;
+        margin:0;
+        transition: background-color .4s ease;
+    }
+    .checkbox-menu li input {
+        margin: 0px 5px;
+        top: 2px;
+        position: relative;
+    }
+
+    .checkbox-menu li.active label {
+        background-color: #cbcbff;
+        font-weight:bold;
+    }
+
+    .checkbox-menu li label:hover,
+    .checkbox-menu li label:focus {
+        background-color: #f5f5f5;
+    }
+
+    .checkbox-menu li.active label:hover,
+    .checkbox-menu li.active label:focus {
+        background-color: #b8b8ff;
+    }
+  </style>
+
+
+<div class="dropdown form-group">
+  <button class="btn btn-default dropdown-toggle form-group" type="button" 
+          id="dropdownMenu1" data-toggle="dropdown" 
+          aria-haspopup="true" aria-expanded="true">
+    Ubicacion 
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu checkbox-menu allow-focus" aria-labelledby="dropdownMenu1">
+  
+    <li >
+      <label>
+        <input type="checkbox"> Marbella
+      </label>
+    </li>
+    
+    <li >
+      <label>
+        <input type="checkbox"> Paitilla
+      </label>
+    </li>
+    
+    <li >
+      <label>
+        <input type="checkbox"> Coco del Mar
+      </label>
+    </li>
+        <li >
+      <label>
+        <input type="checkbox"> Todos
+      </label>
+    </li>
+    
+  </ul>
+</div>
+      <!--DROPDOWN-->
+
+      <div class="form-group mb-2">
+        <select name="cars" class="custom-select">
+          <option selected>$ Minimo</option>
+          <option value="100">100</option>
+          <option value="fiat">200</option>
+          <option value="300">300</option>
+        </select>
+      </div>
+      <div class="form-group mb-2">
+        <select name="cars" class="custom-select">
+          <option selected>$ Maximo</option>
+          <option value="100">100</option>
+          <option value="fiat">200</option>
+          <option value="300">300</option>
+        </select>
+      </div>      
+      <div class="form-group mx-sm-3 mb-2">
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="">Studio
+          </label>
+        </div>
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="">1
+          </label>
+        </div>
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="">2
+          </label>
+        </div>
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="">3
+          </label>
+        </div>
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="">4+
+          </label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-info mb-2">Search</button>
+    </form>
+
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
