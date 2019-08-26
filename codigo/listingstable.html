@@ -30,7 +30,7 @@
           var entrega = data.feed.entry[i]['gsx$entrega']['$t'];
           var link = data.feed.entry[i]['gsx$link']['$t'];
 
-          document.getElementById('demo').innerHTML += ('<tr>'+'<td>'+ubicacion+'</td>'+'<td>'+propiedad+'</td>'+'<td>'+precio+'</td>'+'<td>'+precioporm2+'</td>'+'<td>'+tamaño+'</td>'+'<td>'+cuartos+'</td>'+'<td>'+entrega+'</td>'+'<td><a href='+link+'>ver mas</a></td>'+'</tr>');
+          document.getElementById('demo').innerHTML += ('<tr><a href='+link+'><td>'+ubicacion+'</td>'+'<td>'+propiedad+'</td>'+'<td>'+precio+'</td>'+'<td>'+precioporm2+'</td>'+'<td>'+tamaño+'</td>'+'<td>'+cuartos+'</td>'+'<td>'+entrega+'</td>'+'<td></td>'+'</a></tr>');
 
         }
       });
@@ -49,7 +49,7 @@
         <!-- Table head -->
         <thead>
           <tr>
-            <th>Ubicacion</th>
+            <th>Ubicación</th>
             <th>Nombre de Propiedad</th>
             <th>Precio</th>
             <th>Precio por m2</th>
