@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146398613-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-146398613-1');
+    </script>
+    <script>
+      $.getJSON("https://spreadsheets.google.com/feeds/list/1YXb5saPRk0qcmQY3sjDjCveRBpsz9udUPOHUh4fe_D4/5/public/full?alt=json", function (data) {
+        var sheetData = data.feed.entry;
+        console.log(sheetData)
+        var i;
+        for (i = 0; i < sheetData.length; i++) {
+          // var name = data.feed.entry[i]['gsx$_cn6ca']['$t'];
+          // var age = data.feed.entry[i]['gsx$_cokwr']['$t'];
+          // var email = data.feed.entry[i]['gsx$_cpzh4']['$t'];
+          var ubicacion = data.feed.entry[i]['gsx$ubicacion']['$t'];
+          var propiedad = data.feed.entry[i]['gsx$propiedad']['$t'];
+          var precio = data.feed.entry[i]['gsx$precio']['$t'];
+          var precioporm2 = data.feed.entry[i]['gsx$precioporm2']['$t'];
+          var tamaño = data.feed.entry[i]['gsx$tamaño']['$t'];
+          var cuartos = data.feed.entry[i]['gsx$cuartos']['$t'];
+          var entrega = data.feed.entry[i]['gsx$entrega']['$t'];
+          var link = data.feed.entry[i]['gsx$link']['$t'];
+
+          document.getElementById('demo').innerHTML += ('<tr>'+'<td>'+ubicacion+'</td>'+'<td>'+propiedad+'</td>'+'<td>'+precio+'</td>'+'<td>'+precioporm2+'</td>'+'<td>'+tamaño+'</td>'+'<td>'+cuartos+'</td>'+'<td>'+entrega+'</td>'+'<td><a href='+link+'>ver mas</a></td>'+'</tr>');
+
+        }
+      });
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container text-center my-4">
+      <!-- Table  -->
+      <table class="table table bordered table-striped" id="testTable">
+        <!-- Table head -->
+        <thead>
+          <tr>
+            <th>Ubicacion</th>
+            <th>Nombre de Propiedad</th>
+            <th>Precio</th>
+            <th>Precio por m2</th>
+            <th>Tamaño (m2)</th>
+            <th>Cuartos</th>
+            <th>Entrega</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <!-- Table head -->
+        <!-- Table body -->
+        <tbody id="demo">  
+        </tbody>
+        <!-- Table body -->
+      </table>
+      <!-- Table  -->
+
+    </div>
+  </body>
+</html>
