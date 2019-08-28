@@ -29,8 +29,14 @@
           var cuartos = data.feed.entry[i]['gsx$cuartos']['$t'];
           var entrega = data.feed.entry[i]['gsx$entrega']['$t'];
           var link = data.feed.entry[i]['gsx$link']['$t'];
-
-          document.getElementById('demo').innerHTML += ('<tr><a href='+link+'><td><a href='+link+'>'+ubicacion+'</a></td>'+'<td><a href='+link+'>'+propiedad+'</a></td>'+'<td style="width:100px"><a href='+link+'>'+precio+'</a></td>'+/*'<td>'+precioporm2+'</td>'+*/'<td><a href='+link+'>'+tamaño+'</a></td>'+'</a></tr>');
+          console.log(link.length > 0);
+          console.log(link);
+          if (link.length > 0){
+            document.getElementById('demo').innerHTML += ('<tr><a href='+link+'><td><a href='+link+'>'+ubicacion+'</a></td>'+'<td><a href='+link+'>'+propiedad+'</a></td>'+'<td style="width:100px"><a href='+link+'>'+precio+'</a></td>'+/*'<td>'+precioporm2+'</td>'+*/'<td><a href='+link+'>'+tamaño+'</a></td>'+'</a></tr>');
+          } else{
+            document.getElementById('demo').innerHTML += ('<tr><td>'+ubicacion+'</td>'+'<td>'+propiedad+'</td>'+'<td style="width:100px">'+precio+'</td>'+/*'<td>'+precioporm2+'</td>'+*/'<td>'+tamaño+'</td>'+'</tr>');
+          }
+          
 
         }
       });
