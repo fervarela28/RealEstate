@@ -30,7 +30,7 @@
           var entrega = data.feed.entry[i]['gsx$entrega']['$t'];
           var link = data.feed.entry[i]['gsx$link']['$t'];
 
-          document.getElementById('demo').innerHTML += ('<tr><a href='+link+'><td>'+ubicacion+'</td>'+'<td>'+propiedad+'</td>'+'<td>'+precio+'</td>'+'<td>'+precioporm2+'</td>'+'<td>'+tamaño+'</td>'+'<td>'+cuartos+'</td>'+'<td>'+entrega+'</td>'+'<td></td>'+'</a></tr>');
+          document.getElementById('demo').innerHTML += ('<tr><a href='+link+'><td><a href='+link+'>'+ubicacion+'</a></td>'+'<td><a href='+link+'>'+propiedad+'</a></td>'+'<td style="width:100px"><a href='+link+'>'+precio+'</a></td>'+/*'<td>'+precioporm2+'</td>'+*/'<td><a href='+link+'>'+tamaño+'</a></td>'+'</a></tr>');
 
         }
       });
@@ -52,11 +52,7 @@
             <th>Ubicación</th>
             <th>Nombre de Propiedad</th>
             <th>Precio</th>
-            <th>Precio por m2</th>
             <th>Tamaño (m2)</th>
-            <th>Cuartos</th>
-            <th>Entrega</th>
-            <th>Link</th>
           </tr>
         </thead>
         <!-- Table head -->
