@@ -30,13 +30,15 @@
           var entrega = data.feed.entry[i]['gsx$entrega']['$t'];
           var link = data.feed.entry[i]['gsx$link']['$t'];
           if (link.length > 0){
-            document.getElementById('demo').innerHTML += ('<tr><a href='+link+'><td><a href='+link+'>'+ubicacion+'</a></td>'+'<td><a href='+link+'>'+propiedad+'</a></td>'+'<td style="width:100px"><a href='+link+'>'+precio+'</a></td>'+/*'<td>'+precioporm2+'</td>'+*/'<td><a href='+link+'>'+tamaño+'</a></td>'+'</a></tr>');
+            document.getElementById('demo').innerHTML += ('<tr class="table-row trclickable" data-href='+link+'><td>'+ubicacion+'</td>'+'<td>'+propiedad+'</td>'+'<td style="width:100px">'+precio+'</td>'+/*'<td>'+precioporm2+'</td>'+*/'<td>'+tamaño+'</td>'+'</tr>');
           } else{
-            document.getElementById('demo').innerHTML += ('<tr><td>'+ubicacion+'</td>'+'<td>'+propiedad+'</td>'+'<td style="width:100px">'+precio+'</td>'+/*'<td>'+precioporm2+'</td>'+*/'<td>'+tamaño+'</td>'+'</tr>');
+            document.getElementById('demo').innerHTML += ('<tr><td class="text-muted">'+ubicacion+'</td>'+'<td class="text-muted">'+propiedad+'</td>'+'<td style="width:100px" class="text-muted">'+precio+'</td>'+/*'<td>'+precioporm2+'</td>'+*/'<td class="text-muted">'+tamaño+'</td>'+'</tr>');
           }
-          
-
         }
+        $(".table-row").click(function() {
+              console.log("aquidd")
+              window.document.location = $(this).data("href");
+          });
       });
     </script>
 
@@ -45,6 +47,9 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="table.css">
+    
   </head>
   <body>
     <div class="container text-center my-4">

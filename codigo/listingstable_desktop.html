@@ -12,10 +12,14 @@
 
       gtag('config', 'UA-146398613-1');
     </script>
+
+    <!-- HACER TABLE ROW CLICKEABLE -->
+    <!-- END DE HACER TABLE ROW CLICKEABLE -->
+
     <script>
+
       $.getJSON("https://spreadsheets.google.com/feeds/list/1YXb5saPRk0qcmQY3sjDjCveRBpsz9udUPOHUh4fe_D4/5/public/full?alt=json", function (data) {
         var sheetData = data.feed.entry;
-        console.log(sheetData)
         var i;
         for (i = 0; i < sheetData.length; i++) {
           // var name = data.feed.entry[i]['gsx$_cn6ca']['$t'];
@@ -30,13 +34,19 @@
           var entrega = data.feed.entry[i]['gsx$entrega']['$t'];
           var link = data.feed.entry[i]['gsx$link']['$t'];
           if (link.length > 0){
-            document.getElementById('demo').innerHTML += ('<tr><a href='+link+'><td><a href='+link+'>'+ubicacion+'</a></td>'+'<td><a href='+link+'>'+propiedad+'</a></td>'+'<td style="width:100px"><a href='+link+'>'+precio+'</a></td>'+'<td><a href='+link+'>'+precioporm2+'</a></td>'+'<td><a href='+link+'>'+tamaño+'</a></td>'+'<td><a href='+link+'>'+cuartos+'</a></td>'+'<td><a href='+link+'>'+entrega+'</a></td>'+'</a></tr>');
+            document.getElementById('demo').innerHTML += ('<tr class="table-row trclickable" data-href='+link+'><td>'+ubicacion+'</td>'+'<td>'+propiedad+'</td>'+'<td style="width:100px">'+precio+'</td>'+'<td>'+precioporm2+'</td>'+'<td>'+tamaño+'</td>'+'<td>'+cuartos+'</td>'+'<td>'+entrega+'</td>'+'</tr>');
           } else{
-            document.getElementById('demo').innerHTML += ('<tr><td>'+ubicacion+'</td>'+'<td>'+propiedad+'</td>'+'<td style="width:100px">'+precio+'</td>'+'<td>'+precioporm2+'</td>'+'<td>'+tamaño+'</td>'+'<td>'+cuartos+'</td>'+'<td>'+entrega+'</td>'+'</tr>');
+            document.getElementById('demo').innerHTML += ('<tr><td class="text-muted">'+ubicacion+'</td>'+'<td class="text-muted">'+propiedad+'</td>'+'<td style="width:100px" class="text-muted">'+precio+'</td>'+'<td class="text-muted">'+precioporm2+'</td>'+'<td class="text-muted">'+tamaño+'</td>'+'<td class="text-muted">'+cuartos+'</td>'+'<td class="text-muted">'+entrega+'</td>'+'</tr>');
           }
 
         }
+        $(".table-row").click(function() {
+              console.log("aquidd")
+              window.document.location = $(this).data("href");
+          });
+
       });
+
     </script>
 
     <meta charset="utf-8">
@@ -44,6 +54,9 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="table.css">
+
   </head>
   <body>
     <div class="container text-center my-4">
@@ -63,7 +76,7 @@
         </thead>
         <!-- Table head -->
         <!-- Table body -->
-        <tbody id="demo">  
+        <tbody id="demo"> 
         </tbody>
         <!-- Table body -->
       </table>
