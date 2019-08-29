@@ -23,3 +23,27 @@
 #myCarousel .carousel-indicators > li.active img {
     opacity: 0.7;
 }
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 50px;
+  width: 50px;
+  outline: black;
+  background-size: 10%, 10%;
+  border-radius: 80%;
+  border: 1px solid white;
+  background-color: white;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 29px;
+  color: #06235a;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 29px;
+  color: #06235a;
+}
