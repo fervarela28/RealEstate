@@ -7,7 +7,7 @@ from jinja2 import Template
 with open('listingtemplate.html') as f:
     tmpl = Template(f.read())
 json = { "aparts":
-	[{'apartname' : 'Asia',
+	[{'apartname' : 'AsiaA',
 	'imagenums' : [1,2,3,4,5,6,7,8,9,10],
 	'location' : 'Costa del Este',
 	'propertyname' : 'Asia - modelo A',
@@ -16,10 +16,10 @@ json = { "aparts":
 	'precioporm' : '2,568',
 	'cuartos' : 3,
 	'banos' : 3.5,
-	'mantenimiento' : 'PENDIENTE',
+	'mantenimiento' : '$295',
 	'entrega' : 'YA',
 	'ultimocambio' : 0,
-	'estacionamientos' : 'PENDIENTE',
+	'estacionamientos' : '2',
 	'mapa' : 'PENDIENTE',
 	'apartamenities' : ["Balcón", "Vista a la ciudad"],
 	'buildingamenities' : ["4 ascensores", "Piscina + jacuzzi","Área de niños", "Cancha de squash","Coworking space", "Gimnasio","Canchas de deportes de Costa del Mar"] 
@@ -33,10 +33,10 @@ json = { "aparts":
 	'precioporm' : '2,484',
 	'cuartos' : 3,
 	'banos' : 3.5,
-	'mantenimiento' : 'PENDIENTE',
+	'mantenimiento' : '$295',
 	'entrega' : 'YA',
 	'ultimocambio' : 0,
-	'estacionamientos' : 'PENDIENTE',
+	'estacionamientos' : '2',
 	'mapa' : 'PENDIENTE',
 	'apartamenities' : ["Balcón", "Vista al parque"],
 	'buildingamenities' : ["4 ascensores", "Piscina + jacuzzi","Área de niños", "Cancha de squash","Coworking space", "Gimnasio","Canchas de deportes de Costa del Mar"] 
