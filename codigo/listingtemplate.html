@@ -16,13 +16,18 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- WHATSAPP LOGO -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- END WHATSAPP LOGO -->
+    
     <link rel="stylesheet" href="listing.css">
   </head>
   <body>
     <nav class="senavblue navbar navbar-light mb-4">
       <div class="container">
         <a class="navbar-brand" href="http://www.trovapanama.com/home/lista">
-          <h4 class="mb-0 text-white">← Back to List</h4>
+          <h4 class="mb-0 text-white">← Lista</h4>
         </a>
       </div>
     </nav>
@@ -79,9 +84,14 @@
               <p class="small">${{ ultimocambio }}</p>
             </div>
           </div>
-          <a class="text-dark" href="{{ mapa }}" target="_blank"><button type="button" class="btn btn-outline-secondary">Ver Mapa</button></a>
-          <a class="text-dark" href="images/{{ apartname }}/plano.jpg" target="_blank"><button type="button" class="btn btn-outline-secondary">Ver Plano</button></a>
+          <a class="text-dark" href="{{ mapa }}" target="_blank"><button type="button" class="btn btn-outline-secondary" onclick="gtag('event', 'map_click')">Ver Mapa</button></a>
+          <a class="text-dark" href="images/{{ apartname }}/plano.jpg" target="_blank" onclick="gtag('event', 'plano_click')"><button type="button" class="btn btn-outline-secondary">Ver Plano</button></a>
           <!-- END INPUT -->
+          <div name="other details">
+            <br>
+            <button class="btn btn-success" onclick="window.location.href = 'https://wa.me/50766181519';">Contactar a <b>Trova</b> sobre este anuncio   <i class="fa fa-whatsapp"></i></button>
+            <p class="text-muted pt-1"> También puedes contactarnos a info@trovapanama.com</p>
+          </div>
       </div>
     </div>
     <div class="row">
