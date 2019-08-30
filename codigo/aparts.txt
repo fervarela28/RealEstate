@@ -1,0 +1,37 @@
+{ "aparts":
+	[{"apartname" : "AsiaA",
+	"imagenums" : [1,2,3,4,5,6,7,8,9,10],
+	"location" : "Costa del Este",
+	"propertyname" : "Asia - modelo A",
+	"precio" : "398,000",
+	"tamano" : 155,
+	"precioporm" : "2,568",
+	"cuartos" : 3,
+	"banos" : 3.5,
+	"mantenimiento" : "295",
+	"entrega" : "YA",
+	"ultimocambio" : 0,
+	"estacionamientos" : "2",
+	"mapa" : "https://goo.gl/maps/3bSPGERSMoBHHBdc7",
+	"apartamenities" : ["Balcón", "Vista a la ciudad"],
+	"buildingamenities" : ["4 ascensores", "Piscina + jacuzzi","Área de niños", "Cancha de squash","Coworking space", "Gimnasio","Canchas de deportes de Costa del Mar"] 
+	}, 
+	{"apartname" : "AsiaC",
+	"imagenums" : [1,2,3,4,5,6,7,8,9,10],
+	"location" : "Costa del Este",
+	"propertyname" : "Asia - modelo C",
+	"precio" : "385,000",
+	"tamano" : 155,
+	"precioporm" : "2,484",
+	"cuartos" : 3,
+	"banos" : 3.5,
+	"mantenimiento" : "295",
+	"entrega" : "YA",
+	"ultimocambio" : 0,
+	"estacionamientos" : "2",
+	"mapa" : "https://goo.gl/maps/3bSPGERSMoBHHBdc7",
+	"apartamenities" : ["Balcón", "Vista al parque"],
+	"buildingamenities" : ["4 ascensores", "Piscina + jacuzzi","Área de niños", "Cancha de squash","Coworking space", "Gimnasio","Canchas de deportes de Costa del Mar"] 
+	}
+	]
+}
