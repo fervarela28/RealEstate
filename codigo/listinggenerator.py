@@ -14,5 +14,7 @@ with open('listingtemplate.html') as f:
 
 for apart in aparts['aparts']:
 	html = tmpl.render(apart)
-	
+	if apart["apartname"] == "CocoPlaceB": 
+		print html
+
 
