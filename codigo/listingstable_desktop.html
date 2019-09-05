@@ -5,6 +5,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146398613-1"></script>
+
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -13,14 +14,30 @@
       gtag('config', 'UA-146398613-1');
     </script>
 
-    <!-- HACER TABLE ROW CLICKEABLE -->
-    <!-- END DE HACER TABLE ROW CLICKEABLE -->
-
     <script>
-
       $.getJSON("https://spreadsheets.google.com/feeds/list/1YXb5saPRk0qcmQY3sjDjCveRBpsz9udUPOHUh4fe_D4/5/public/full?alt=json", function (data) {
         var sheetData = data.feed.entry;
+        var url_string = window.location.href
+        var url = new URL(url_string);
+        var minprecio = parseInt(url.searchParams.get("minprecio")) || 0;
+        var maxprecio = parseInt(url.searchParams.get("maxprecio")) || 100000000;
+        var mintamaño = parseInt(url.searchParams.get("mintamaño")) || 0;
+        var maxtamaño = parseInt(url.searchParams.get("maxtamaño")) || 10000;
+        var cuartosInput = [parseInt(url.searchParams.get("cuartosInput1")),parseInt(url.searchParams.get("cuartosInput2")),parseInt(url.searchParams.get("cuartosInput3")),parseInt(url.searchParams.get("cuartosInput4"))];
+        var ubicacionInput = url.searchParams.getAll("location")
+
         var i;
+        if (!cuartosInput.reduce((first, next) => {return first || next})){
+          cuartosInput = [1,2,3,4]
+        }else{
+
+        }
+        if (ubicacionInput.length == 0){
+          ubicacionInput = ["Avenida Balboa","Coco del Mar","Costa del Este","La Cresta", "Marbella","Punta Pacífica", "Santa María"]
+        }else{
+
+        }
+
         for (i = 0; i < sheetData.length; i++) {
           // var name = data.feed.entry[i]['gsx$_cn6ca']['$t'];
           // var age = data.feed.entry[i]['gsx$_cokwr']['$t'];
@@ -33,27 +50,46 @@
           var cuartos = data.feed.entry[i]['gsx$cuartos']['$t'];
           var entrega = data.feed.entry[i]['gsx$entrega']['$t'];
           var link = data.feed.entry[i]['gsx$link']['$t'];
-          if (link.length > 0){
-            document.getElementById('demo').innerHTML += ('<tr class="table-row trclickable" data-href='+link+'><td>'+ubicacion+'</td>'+'<td>'+propiedad+'</td>'+'<td style="width:100px">'+precio+'</td>'+'<td>'+precioporm2+'</td>'+'<td>'+tamaño+'</td>'+'<td>'+cuartos+'</td>'+'<td>'+entrega+'</td>'+'</tr>');
-          } else{
-            document.getElementById('demo').innerHTML += ('<tr><td class="text-muted">'+ubicacion+'</td>'+'<td class="text-muted">'+propiedad+'</td>'+'<td style="width:100px" class="text-muted">'+precio+'</td>'+'<td class="text-muted">'+precioporm2+'</td>'+'<td class="text-muted">'+tamaño+'</td>'+'<td class="text-muted">'+cuartos+'</td>'+'<td class="text-muted">'+entrega+'</td>'+'</tr>');
+          if (Number(precio.replace(/[^0-9.-]+/g,"")) > minprecio && Number(precio.replace(/[^0-9.-]+/g,"")) < maxprecio && tamaño > mintamaño && tamaño < maxtamaño && cuartosInput.includes(parseInt(cuartos)) && ubicacionInput.includes(ubicacion)){
+            if (link.length > 0){
+              document.getElementById('demo').innerHTML += ('<tr class="table-row trclickable" data-href='+link+'><td>'+ubicacion+'</td>'+'<td>'+propiedad+'</td>'+'<td style="width:100px">'+precio+'</td>'+'<td>'+precioporm2+'</td>'+'<td>'+tamaño+'</td>'+'<td>'+cuartos+'</td>'+'<td>'+entrega+'</td>'+'</tr>');
+            } else{
+              document.getElementById('demo').innerHTML += ('<tr><td class="text-muted">'+ubicacion+'</td>'+'<td class="text-muted">'+propiedad+'</td>'+'<td style="width:100px" class="text-muted">'+precio+'</td>'+'<td class="text-muted">'+precioporm2+'</td>'+'<td class="text-muted">'+tamaño+'</td>'+'<td class="text-muted">'+cuartos+'</td>'+'<td class="text-muted">'+entrega+'</td>'+'</tr>');
+            }
           }
-
         }
+
+
         $(".table-row").click(function() {
-              console.log("aquidd")
               window.document.location = $(this).data("href");
           });
 
       });
+      $( document ).ready(function() {
+        var url_string = window.location.href
+        var url = new URL(url_string);
+        var ubicacionInput = url.searchParams.getAll("location")
+        $('.selectpicker').selectpicker('val', ubicacionInput);
+        if(url.searchParams.get("minprecio")) {$('select[name="minprecio"').val(url.searchParams.get("minprecio"))}
+        if(url.searchParams.get("maxprecio")) {$('select[name="maxprecio"').val(url.searchParams.get("maxprecio"))}
+
+        if(url.searchParams.get("cuartosInput1")) {$('input[name="cuartosInput1"').prop( "checked", true )}
+        if(url.searchParams.get("cuartosInput2")) {$('input[name="cuartosInput2"').prop( "checked", true )}
+        if(url.searchParams.get("cuartosInput3")) {$('input[name="cuartosInput3"').prop( "checked", true )}
+        if(url.searchParams.get("cuartosInput4")) {$('input[name="cuartosInput4"').prop( "checked", true )}
+      });
 
     </script>
 
+    <script>
+
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 
     <style>
       .table .trclickable:hover { 
@@ -63,7 +99,76 @@
     </style>
   </head>
   <body>
-    <div class="container text-center my-4">
+  <div class="container text-center my-4">
+    <form class="form-inline">
+      <div class="form-group mb-2 mr-3">
+        <select name="location" class="selectpicker" title="Ubicaciones" multiple>
+          <option>Avenida Balboa</option>
+          <option>Coco del Mar</option>
+          <option>Costa del Este</option>
+          <option>La Cresta</option>
+          <option>Marbella</option>
+          <option>Punta Pacífica</option>
+          <option>Santa María</option>
+        </select>
+      </div>
+
+
+      <!--DROPDOWN-->
+      <div class="form-group mb-2">
+        <select name="minprecio" class="custom-select">
+          <option>$ Mínimo</option>
+          <option value="0">$0</option>
+          <option value="100000">$100,000</option>
+          <option value="200000">$200,000</option>
+          <option value="300000">$300,000</option>
+          <option value="500000">$500,000</option>
+          <option value="750000">$750,000</option>
+          <option value="1000000">$1,000,000</option>
+        </select>
+      </div>
+      <div class="form-group mb-2">
+        <select name="maxprecio" class="custom-select">
+          <option selected>$ Máximo</option>
+          <option value="100000">$100,000</option>
+          <option value="200000">$200,000</option>
+          <option value="300000">$300,000</option>
+          <option value="500000">$500,000</option>
+          <option value="750000">$750,000</option>
+          <option value="1000000">$1,000,000</option>
+          <option value="10000000">$Cualquier</option>
+        </select>
+      </div>      
+      <div class="form-group mx-sm-3 mb-2">
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            Cuartos:
+          </label>
+        </div>
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" name="cuartosInput1" value="1">1
+          </label>
+        </div>
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" name="cuartosInput2" value="2">2
+          </label>
+        </div>
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" name="cuartosInput3" value="3">3
+          </label>
+        </div>
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" name="cuartosInput4" value="4">4+
+          </label>
+        </div>
+      </div>
+      <button type="submit" id="search" class="btn btn-info mb-2" style="background-color:#0c2a4e; border-color:#0c2a4e">Buscar</button>
+    </form>
+
       <!-- Table  -->
       <table class="table table bordered table-striped" id="testTable">
         <!-- Table head -->
@@ -86,6 +191,13 @@
       </table>
       <!-- Table  -->
 
-    </div>
+  </div>
   </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
 </html>
