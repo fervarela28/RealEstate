@@ -33,7 +33,7 @@
 
         }
         if (ubicacionInput.length == 0){
-          ubicacionInput = ["Avenida Balboa","Coco del Mar","Costa del Este","La Cresta", "Marbella","Punta Pacífica", "Santa María"]
+          ubicacionInput = ["Avenida Balboa","Coco del Mar","Costa del Este","La Cresta", "Marbella","Obarrio","Parque Lefevre","Punta Pacífica","Río Abajo","San Francisco", "Santa María"]
         }else{
 
         }
@@ -88,13 +88,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="newest stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
     <style>
       .table .trclickable:hover { 
         background-color: #e1e9f7;
         cursor:pointer;
+      }
+      .dropdown-toggle {
+        background: white !important;
+        height: calc(1.5em + .75rem + 2px) !important;
+        padding: .375rem 1.75rem .375rem .75rem !important;
+        font-size: 1rem !important;
+        font-weight: 400 !important;
+        line-height: 1.5 !important;
+        color: #495057 !important;
+        vertical-align: middle !important;
+        background: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e) no-repeat right .75rem center/8px 10px !important;
+        background-color: #fff !important;
+        border: 1px solid #ced4da !important;
+        border-radius: .25rem !important;
+      }
+      #search{
+        border-radius: .25rem !important;
       }
     </style>
   </head>
@@ -108,7 +125,11 @@
           <option>Costa del Este</option>
           <option>La Cresta</option>
           <option>Marbella</option>
+          <option>Obarrio</option>
+          <option>Parque Lefevre</option>
           <option>Punta Pacífica</option>
+          <option>Río Abajo</option>
+          <option>San Francisco</option>
           <option>Santa María</option>
         </select>
       </div>
@@ -138,7 +159,30 @@
           <option value="1000000">$1,000,000</option>
           <option value="10000000">$Cualquier</option>
         </select>
-      </div>      
+      </div>
+      <!-- <div class="form-group ml-3 mb-2">
+        <select name="mintamaño" class="custom-select">
+          <option>Tamaño mín</option>
+          <option value="0">0 m²</option>
+          <option value="100">100 m²</option>
+          <option value="150">150 m²</option>
+          <option value="200">200 m²</option>
+          <option value="250">250 m²</option>
+          <option value="350">350 m²</option>
+          <option value="500">500 m²</option>
+        </select>
+      </div>
+      <div class="form-group mr-3 mb-2">
+        <select name="maxtamaño" class="custom-select">
+          <option>Tamaño máximo</option>
+          <option value="200">200 m²</option>
+          <option value="250">250 m²</option>
+          <option value="300">300 m²</option>
+          <option value="350">350 m²</option>
+          <option value="500">500 m²</option>
+          <option value="10000">Cualquier</option>
+        </select>
+      </div>   -->    
       <div class="form-group mx-sm-3 mb-2">
         <div class="form-check-inline">
           <label class="form-check-label">
@@ -147,26 +191,26 @@
         </div>
         <div class="form-check-inline">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" name="cuartosInput1" value="1">1
+            <input type="checkbox" style="width: auto" class="form-check-input" name="cuartosInput1" value="1">1
           </label>
         </div>
         <div class="form-check-inline">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" name="cuartosInput2" value="2">2
+            <input type="checkbox" style="width: auto" class="form-check-input" name="cuartosInput2" value="2">2
           </label>
         </div>
         <div class="form-check-inline">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" name="cuartosInput3" value="3">3
+            <input type="checkbox" style="width: auto" class="form-check-input" name="cuartosInput3" value="3">3
           </label>
         </div>
         <div class="form-check-inline">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" name="cuartosInput4" value="4">4+
+            <input type="checkbox" style="width: auto" class="form-check-input" name="cuartosInput4" value="4">4+
           </label>
         </div>
       </div>
-      <button type="submit" id="search" class="btn btn-info mb-2" style="background-color:#0c2a4e; border-color:#0c2a4e">Buscar</button>
+      <button type="submit" id="search" class="btn btn-info mb-2" style="background-color:#0c2a4e; border-color:#0c2a4e" onclick="gtag('event', 'filtrar')">Buscar</button>
     </form>
 
       <!-- Table  -->
@@ -195,9 +239,9 @@
   </body>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script defer="defer" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
 </html>

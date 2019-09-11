@@ -14,7 +14,13 @@ with open('listingtemplate.html') as f:
 
 for apart in aparts['aparts']:
 	html = tmpl.render(apart)
-	if apart["apartname"] == "CocoPlaceB": 
-		print html
+	falta_planos = ["SanFranciscoPark","Panamar","TorreZeus","PearlAtTheSea",
+	"OceanTwo","SantaCecilia","PacificVillage","StarBay","Bahia","Montemar",
+	"Firenze","FairmontPlaza","LomaAlegre","FairwayEstates"]
+	if apart["apartname"] not in falta_planos:
+		print apart["apartname"]
+		f = open("listing"+apart["apartname"]+".html", "w")
+		f.write(html)
+		f.close()
 
 

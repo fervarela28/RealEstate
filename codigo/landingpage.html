@@ -18,17 +18,11 @@
       </a>
     </nav>
     <div class="container mb-4">
-      <div class="radiowrapper" id="wrap1">
-      <input type="radio" name="problem" value="headaches" id="problem1" checked>
-      <label for="problem1">Ventas</label>
-      <input type="radio" name="problem" value="alquiler" id="problem2">
-      <label for="problem2">Alquiler</label>
-    </div>
     <form class="form-inline">
 
       <!--DROPDOWN-->
 
-      <script type ="text/javascript">
+    <script type ="text/javascript">
     $(".checkbox-menu").on("change", "input[type='checkbox']", function() {
        $(this).closest("li").toggleClass("active", this.checked);
     });
@@ -36,10 +30,36 @@
     $(document).on('click', '.allow-focus', function (e) {
       e.stopPropagation();
     });
+    </script>
 
-  </script>
 
-  <style type="text/css">
+
+    <script type ="text/javascript">
+      var options = [];
+
+      $( '.dropdown-menu a' ).on( 'click', function( event ) {
+
+         var $target = $( event.currentTarget ),
+             val = $target.attr( 'data-value' ),
+             $inp = $target.find( 'input' ),
+             idx;
+
+         if ( ( idx = options.indexOf( val ) ) > -1 ) {
+            options.splice( idx, 1 );
+            setTimeout( function() { $inp.prop( 'checked', false ) }, 0);
+         } else {
+            options.push( val );
+            setTimeout( function() { $inp.prop( 'checked', true ) }, 0);
+         }
+
+         $( event.target ).blur();
+            
+         console.log( options );
+         return false;
+      });
+    </script>
+
+    <!--<style type="text/css"> 
     .checkbox-menu li label {
         display: block;
         padding: 3px 10px;
@@ -71,45 +91,58 @@
     .checkbox-menu li.active label:focus {
         background-color: #b8b8ff;
     }
-  </style>
+  </style>-->
 
 
-<div class="dropdown form-group">
+      <div class="dropdown form-group mb-2">
+        <div class="button-group">
+          <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Ubicación</span> <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><span href="#" class="small" data-value="AvenidaBalboa" tabIndex="-1"><input type="checkbox"/>&nbsp;Avenida Balboa</span></li>
+                  <li><span href="#" class="small" data-value="SantaMaria" tabIndex="-1"><input type="checkbox"/>&nbsp;Santa María</span></li>
+                  <li><span href="#" class="small" data-value="CostaDelEste" tabIndex="-1"><input type="checkbox"/>&nbsp;Costa del Este</span></li>
+                  <li><span href="#" class="small" data-value="LaCresta" tabIndex="-1"><input type="checkbox"/>&nbsp;La Cresta</span></li>
+                </ul>
+        </div>
+      </div>
+
+<!-- <div class="dropdown form-group mb-2">
   <button class="btn btn-default dropdown-toggle form-group" type="button" 
           id="dropdownMenu1" data-toggle="dropdown" 
-          aria-haspopup="true" aria-expanded="true">
-    Ubicacion 
+          aria-haspopup="true" aria-expanded="=">
+    Ubicación 
     <span class="caret"></span>
   </button>
   <ul class="dropdown-menu checkbox-menu allow-focus" aria-labelledby="dropdownMenu1">
-  
     <li >
       <label>
-        <input type="checkbox"> Marbella
+        <input type="checkbox" name="AvenidaBalboa">&nbsp;Avenida Balboa
       </label>
     </li>
-    
-    <li >
+    <li>
       <label>
-        <input type="checkbox"> Paitilla
+        <input type="checkbox" name="Paitilla" value="Paitilla">&nbsp;Paitilla
       </label>
     </li>
-    
-    <li >
+    <li>
       <label>
-        <input type="checkbox"> Coco del Mar
+        <input type="checkbox">&nbsp;Coco del Mar
       </label>
     </li>
         <li >
       <label>
-        <input type="checkbox"> Todos
+        <input type="checkbox">&nbsp;Todos
       </label>
-    </li>
-    
+    </li>  
   </ul>
-</div>
-      <!--DROPDOWN-->
+</div> -->
 
+
+
+
+
+
+      <!--DROPDOWN-->
       <div class="form-group mb-2">
         <select name="cars" class="custom-select">
           <option selected>$ Minimo</option>
