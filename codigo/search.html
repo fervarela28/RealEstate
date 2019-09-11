@@ -26,10 +26,10 @@
     <form class="form-inline">
       <div class="form-group mx-sm-3 mb-2">
         <label for="staticEmail2" class="sr-only">Email</label>
-        <input type="text" class="form-control" id="staticEmail2" value="email@example.com">
+        <input type="text" class="form-control" id="staticEmail2" value="email@example.com" name="email">
       </div>
       <div class="form-group mb-2">
-        <select name="cars" class="custom-select">
+        <select name="pricemin" class="custom-select">
           <option selected>$ Minimo</option>
           <option value="100">100</option>
           <option value="fiat">200</option>
@@ -37,7 +37,7 @@
         </select>
       </div>
       <div class="form-group mb-2">
-        <select name="cars" class="custom-select">
+        <select name="pricemax" class="custom-select">
           <option selected>$ Maximo</option>
           <option value="100">100</option>
           <option value="fiat">200</option>
@@ -47,31 +47,31 @@
       <div class="form-group mx-sm-3 mb-2">
         <div class="form-check-inline">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="">Studio
+            <input type="checkbox" class="form-check-input" name="cuartosInputStudio">Studio
           </label>
         </div>
         <div class="form-check-inline">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="">1
+            <input type="checkbox" class="form-check-input" name="cuartosInput1">1
           </label>
         </div>
         <div class="form-check-inline">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="">2
+            <input type="checkbox" class="form-check-input" name="cuartosInput2">2
           </label>
         </div>
         <div class="form-check-inline">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="">3
+            <input type="checkbox" class="form-check-input" name="cuartosInput3">3
           </label>
         </div>
         <div class="form-check-inline">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="">4+
+            <input type="checkbox" class="form-check-input" name="cuartosInput4">4+
           </label>
         </div>
       </div>
-      <button type="submit" class="btn btn-primary mb-2">Search</button>
+      <button type="submit" class="btn btn-primary mb-2" style="background-color:#0c2a4e; border-color:#0c2a4e">Buscar</button>
     </form>
 
     <!-- Optional JavaScript -->
