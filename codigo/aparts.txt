@@ -776,6 +776,23 @@
 	"mapa" : "https://goo.gl/maps/4LDKPV6LUs3GyGE66",
 	"apartamenities" : ["Cuarto y baño de servicio","Terraza"],
 	"buildingamenities" : ["Piscina"]
+	},
+	{"apartname" : "Acqua2",
+	"imagenums" : [1,2,3,4,5,6,7,8,9,10],
+	"location" : "Costa del Este",
+	"propertyname" : "Acqua II",
+	"precio" : "895,000",
+	"tamano" : 360,
+	"precioporm" : "2,482",
+	"cuartos" : 3,
+	"banos" : 3.5,
+	"mantenimiento" : "$595",
+	"entrega" : "Ya",
+	"ultimocambio" :"0",
+	"estacionamientos" : "2",
+	"mapa" : "https://goo.gl/maps/yufKA4DgyKCD523k6",
+	"apartamenities" : ["Cuarto y baño de servicio", "A/A", "Línea blanca","Depósito"],
+	"buildingamenities" : ["Año de construcción: 2011", "Gimnasio", "Piscina", "Seguridad 24hrs", "Parque", "Planta eléctrica", "Tanque de agua", "Sauna", "Salón de fiestas"]
 	}
 
 	]
