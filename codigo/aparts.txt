@@ -718,7 +718,7 @@
 	"precioporm" : "3,611",
 	"cuartos" : 4,
 	"banos" : 4,
-	"mantenimiento" : "$XXX",
+	"mantenimiento" : "$400",
 	"entrega" : "Ya",
 	"ultimocambio" :"0",
 	"estacionamientos" : "3",
