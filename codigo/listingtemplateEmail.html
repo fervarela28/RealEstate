@@ -13,7 +13,8 @@
     </script>
     <script>
       function ver_plano() {
-        console.log('clickearon el segundo ver plano');
+         gtag('event', 'email_'+ String($('#user_email').val()));
+         $('#basicExampleModal').modal('hide');
        }    
     </script>
     <meta charset="utf-8">
@@ -101,11 +102,11 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
-                    <h5>Ayúdanos a mejorar Trova</h5>
-                    <input type="text" class="form-control" id="staticEmail2" placeholder="email@ejemplo.com" name="email">
+                    <h5>Entérate de cómo evoluciona Trova</h5>
+                    <input type="text" class="form-control" id="user_email" placeholder="email@ejemplo.com" name="email">
                   </div>
                   <div class="modal-footer">
-                    <a class="text-dark" href="images/{{ apartname }}/plano.jpg" target="_blank"><button type="button" on-click="ver_plano()" class="btn btn-primary" style="background-color:#0c2a4e; border-color:#0c2a4e">Ver Plano</button></a>
+                    <a class="text-dark" href="images/{{ apartname }}/plano.jpg" target="_blank"><button type="button" onclick="ver_plano()" class="btn btn-primary" style="background-color:#0c2a4e; border-color:#0c2a4e">Ver Plano</button></a>
                   </div>
                 </div>
               </div>
