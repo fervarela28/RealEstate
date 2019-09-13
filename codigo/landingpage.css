@@ -1,7 +1,0 @@
-.radiowrapper input {visibility:hidden; width:0; border-bottom: 2px solid transparent;}
-
-.radiowrapper label:hover {border-color: #0080C6; border-bottom: 2px solid }
-
-.radiowrapper input:checked + label {font-weight:bold; border-color: #0080C6; border-bottom: 2px solid }
-
-.radiowrapper input:not(:checked) + label {color:#8C8C8C}

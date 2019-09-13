@@ -793,6 +793,23 @@
 	"mapa" : "https://goo.gl/maps/yufKA4DgyKCD523k6",
 	"apartamenities" : ["Cuarto y baño de servicio", "A/A", "Línea blanca","Depósito"],
 	"buildingamenities" : ["Año de construcción: 2011", "Gimnasio", "Piscina", "Seguridad 24hrs", "Parque", "Planta eléctrica", "Tanque de agua", "Sauna", "Salón de fiestas"]
+	},
+	{"apartname" : "TorreImperial",
+	"imagenums" : [1,2,3,4,5,6,7,8],
+	"location" : "La Cresta",
+	"propertyname" : "Torre Imperial",
+	"precio" : "880,000",
+	"tamano" : 677,
+	"precioporm" : "1,300",
+	"cuartos" : 4,
+	"banos" : 4,
+	"mantenimiento" : "$1,000",
+	"entrega" : "Ya",
+	"ultimocambio" :"0",
+	"estacionamientos" : "4",
+	"mapa" : "https://goo.gl/maps/JPyhrdg7YjwG3JPR9",
+	"apartamenities" : ["2 Cuartos y baños de servicio", "A/A", "Línea blanca", "Depósito"],
+	"buildingamenities" : ["Año de construcción: 1998", "Gimnasio", "Piscina", "Seguridad 24hrs", "Parque", "Planta eléctrica", "Tanque de agua", "Sauna"]
 	}
 
 	]
