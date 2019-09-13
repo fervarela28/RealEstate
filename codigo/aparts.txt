@@ -68,7 +68,7 @@
 	"buildingamenities" : ["Año de construcción: 2022","102 Aparts en 9 pisos", "Seguridad 24 horas","Piscina", "Gimnasio","Sauna", "Area Social","Estacionamientos de visitas", "Salón de fiestas"]
 	},
 	{"apartname" : "Allegra4A",
-	"imagenums" : [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],
+	"imagenums" : [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
 	"location" : "Santa María",
 	"propertyname" : "Allegra 4A",
 	"precio" : "1,356,330",

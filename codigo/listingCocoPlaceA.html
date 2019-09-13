@@ -24,9 +24,12 @@
       gtag('config', 'UA-146398613-1');
     </script>
     <script>
-      function ver_plano() {
-         gtag('event', 'email_'+ String($('#user_email').val()));
-         $('#basicExampleModal').modal('hide');
+      function ver_plano(url) {
+        if($('#user_email').val()){
+          gtag('event', 'email_'+ String($('#user_email').val()));
+          $('#basicExampleModal').modal('hide');
+          var win = window.open(url, '_blank');
+        }
        }    
     </script>
     <meta charset="utf-8">
@@ -132,7 +135,6 @@
           </div>
           <a class="text-dark" href="https://www.google.com/maps/place/CocoPlace/@8.9951407,-79.5028655,3262m/data=!3m1!1e3!4m5!3m4!1s0x0:0xafa07359c8793ebe!8m2!3d8.996453!4d-79.4990939" target="_blank"><button type="button" class="btn btn-outline-secondary" onclick="gtag('event', 'map_click')">Ver Mapa</button></a>
           <button type="button" class="btn btn-outline-secondary" onclick="gtag('event', 'plano_click')" data-toggle="modal" data-target="#basicExampleModal">Ver Plano</button>
-          <!-- Modal -->
             <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
               aria-hidden="true">
               <div class="modal-dialog" role="document">
@@ -146,13 +148,13 @@
                     <input type="text" class="form-control" id="user_email" placeholder="email@ejemplo.com" name="email">
                   </div>
                   <div class="modal-footer">
-                    <a class="text-dark" href="images/CocoPlaceA/plano.jpg" target="_blank"><button type="button" onclick="ver_plano()" class="btn btn-primary" style="background-color:#0c2a4e; border-color:#0c2a4e">Ver Plano</button></a>
+                   <button type="button" onclick="ver_plano('images/CocoPlaceA/plano.jpg')" class="btn btn-primary" style="background-color:#0c2a4e; border-color:#0c2a4e">Ver Plano</button>
                   </div>
                 </div>
               </div>
             </div>
           <!-- Modal -->
-         <!--  <a class="text-dark" href="#"><button type="button" class="btn btn-outline-secondary disabled" onclick="gtag('event', 'plano_click')">Plano Pendiente</button></a> -->
+          <!-- <a class="text-dark" href="#"><button type="button" class="btn btn-outline-secondary disabled" onclick="gtag('event', 'plano_click')">Plano Pendiente</button></a> -->
           <!-- END INPUT -->
           <div name="other details">
             <br>
