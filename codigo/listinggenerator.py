@@ -16,8 +16,8 @@ for apart in aparts['aparts']:
 	html = tmpl.render(apart)
 	falta_planos = ["SanFranciscoPark","Panamar","TorreZeus","PearlAtTheSea",
 	"OceanTwo","PacificVillage","StarBay","Bahia","Montemar",
-	"Firenze","FairmontPlaza","LomaAlegre","FairwayEstates"]
-	if apart["apartname"] not in falta_planos:
+	"Firenze","FairmontPlaza","LomaAlegre","FairwayEstates", "CocoMar"]
+	if apart["apartname"] in falta_planos:
 		print apart["apartname"]
 		f = open("listing"+apart["apartname"]+".html", "w")
 		f.write(html)
