@@ -17,7 +17,7 @@ for apart in aparts['aparts']:
 	falta_planos = ["SanFranciscoPark","Panamar","TorreZeus","PearlAtTheSea",
 	"OceanTwo","PacificVillage","StarBay","Bahia","Montemar",
 	"Firenze","FairmontPlaza","LomaAlegre","FairwayEstates", "CocoMar"]
-	if apart["apartname"] in falta_planos:
+	if apart["apartname"] not in falta_planos:
 		print apart["apartname"]
 		f = open("listing"+apart["apartname"]+".html", "w")
 		f.write(html)
