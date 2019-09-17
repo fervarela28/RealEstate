@@ -20,15 +20,14 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'UA-146398613-1');
     </script>
     <script>
-      function enviar(apartname) {
-        if($('#user_email').val()){
-          gtag('event', 'email_'+ String($('#user_email').val())+apartname );
-          $('#basicExampleModal').modal('hide');
-        }
+      function ver_plano(url) {
+        gtag('event','mejor_'+String($('#mejor').val()));
+        gtag('event','peor_'+String($('#peor').val()));
+        $('#basicExampleModal').modal('hide');
+        var win = window.open(url, '_blank');
        }    
     </script>
     <meta charset="utf-8">
@@ -141,31 +140,31 @@
             </div>
           </div>
           <a class="text-dark" href="https://goo.gl/maps/WZX3WqWgue4MwEkp9" target="_blank"><button type="button" class="btn btn-outline-secondary" onclick="gtag('event', 'map_click')">Ver Mapa</button></a>
-          <a class="text-dark" href="images/CelesteA/plano.jpg"><button type="button" class="btn btn-outline-secondary" onclick="gtag('event', 'plano_click')">Ver Plano</button></a>
-          <!-- <a class="text-dark" href="#"><button type="button" class="btn btn-outline-secondary disabled" onclick="gtag('event', 'plano_pendiente_click')">Sin Plano</button></a> -->
-          <button type="button" class="btn btn-primary" onclick="gtag('event', 'favorito')" data-toggle="modal" data-target="#basicExampleModal">Favorito &#9733;</button>
+          <button type="button" class="btn btn-outline-secondary" onclick="gtag('event', 'plano_click')" data-toggle="modal" data-target="#basicExampleModal">Ver Plano</button>
             <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
+              aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
-                    <h5>Enviar toda la información de favorito a correo</h5>
-                    <input type="text" class="form-control" id="user_email" placeholder="email@ejemplo.com" name="email">
+                    <h5>Queremos saber tú opinión</h5>
+                    Lo mejor de Trova?<input type="text" class="form-control" id="mejor" placeholder="" name="mejor">
+                    Lo peor de Trova?<input type="text" class="form-control" id="peor" placeholder="" name="peor">
                   </div>
                   <div class="modal-footer">
-                   <button type="button" onclick="enviar('CelesteA')" class="btn btn-primary" style="background-color:#0c2a4e; border-color:#0c2a4e">Enviar</button>
+                   <button type="button" onclick="ver_plano('images/CelesteA/plano.jpg')" class="btn btn-primary" style="background-color:#0c2a4e; border-color:#0c2a4e">Ver Plano</button>
                   </div>
                 </div>
               </div>
             </div>
           <!-- Modal -->
+          <!-- <a class="text-dark" href="#"><button type="button" class="btn btn-outline-secondary disabled" onclick="gtag('event', 'plano_pendiente_click')">Plano Pendiente</button></a> -->
           <!-- END INPUT -->
           <div name="other details">
             <br>
-            <button class="btn btn-success" onclick="window.location.href = 'https://wa.me/50766181519'; gtag('event', 'whatsapp')">Contactar a <b>Trova</b> sobre este anuncio   <i class="fa fa-whatsapp"></i></button>
+            <button class="btn btn-success" onclick="window.location.href = 'https://wa.me/50766181519'; gtag('event', 'whatsapp')">Agendar Visita <i class="fa fa-whatsapp"></i></button>
             <p class="text-muted pt-1"> También puedes contactarnos a info@trovapanama.com</p>
           </div>
       </div>
