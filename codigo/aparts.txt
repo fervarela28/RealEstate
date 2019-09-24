@@ -810,6 +810,23 @@
 	"mapa" : "https://goo.gl/maps/JPyhrdg7YjwG3JPR9",
 	"apartamenities" : ["2 Cuartos y baños de servicio", "A/A", "Línea blanca", "Depósito"],
 	"buildingamenities" : ["Año de construcción: 1998", "Gimnasio", "Piscina", "Seguridad 24hrs", "Parque", "Planta eléctrica", "Tanque de agua", "Sauna"]
+	},
+	{"apartname" : "Nautica",
+	"imagenums" : [1,2,3,4,5,6,7,8,9,10],
+	"location" : "Coco del Mar",
+	"propertyname" : "PH Náutica",
+	"precio" : "460,000",
+	"tamano" : 174,
+	"precioporm" : "2,644",
+	"cuartos" : 2,
+	"banos" : 2.5,
+	"mantenimiento" : "$261",
+	"entrega" : "Ya",
+	"ultimocambio" :"0",
+	"estacionamientos" : "2",
+	"mapa" : "https://goo.gl/maps/1G6jxhjespVp74qc8",
+	"apartamenities" : ["Cuarto y baño de servicio", "Remodelado en el 2018"],
+	"buildingamenities" : ["Año de construcción: 2011", "Gimnasio", "Piscina", "Parque infantil", "Estacionamientos de visita", "Cancha de squash"]
 	}
 
 	]
